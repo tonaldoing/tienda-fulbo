@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import CartWidget from './CartWidget/CartWidget'
+import Divider from '@mui/material/Divider';
 
 export default function ButtonAppBar() {
   return (
@@ -24,9 +26,13 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Vivimos Fútbol
           </Typography>
+          
           <Button color="inherit">Camisetas</Button>
           <Button color="inherit">Ropa de fulbo</Button>
           <Button color="inherit">Accesorios</Button>
+          
+          <Divider orientation="vertical" variant="middle" flexItem />
+          <CartWidget/>
         </Toolbar>
       </AppBar>
     </Box>

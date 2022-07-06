@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import prod_placeholder from '../../images/prods/camiseta-adidas-argentina-2021.jpg' 
+import { Grid, Paper, Typography, ButtonBase } from '@mui/material';
+
+import prod_placeholder from '../../../images/prods/camiseta-adidas-argentina-2021.jpg' 
+import ItemCount from './ItemCount' 
+import './Item.css' 
 
 const Img = styled('img')({
   margin: 'auto',
@@ -44,11 +44,6 @@ export default function ComplexGrid() {
                 ID: 1030114
               </Typography>
             </Grid>
-            <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                Add to cart
-              </Typography>
-            </Grid>
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" component="div">
@@ -56,6 +51,7 @@ export default function ComplexGrid() {
             </Typography>
           </Grid>
         </Grid>
+        <ItemCount initial={1} items={20} />
       </Grid>
     </Paper>
   );

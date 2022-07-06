@@ -1,0 +1,22 @@
+.item-count-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 16px;
+    border-top: 1px solid rgba(25, 118, 210, 0.04);
+    padding-top: 10px;
+}
+
+.item-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-actions {
+    text-align: center;
+}
+.item-actions button {
+    display: block;
+    width: 100%;
+    background-color: rgba(25, 118, 210, 0.02);
+}

@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from 'react'
+import { useState } from 'react';
 import { Button } from '@mui/material';
 
 export default function ItemCount({ initial, items }) {
-  console.log(initial)
-  console.log(items)
+  
   const [count, setCount] = useState(initial)
   const [stock, setStock] = useState(items)
   

@@ -1,58 +1,95 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { Grid, Paper, Typography, ButtonBase } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Dialog from '@mui/material/Dialog';
 
-import prod_placeholder from '../../../images/prods/camiseta-adidas-argentina-2021.jpg' 
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Slide from '@mui/material/Slide';
+
 import ItemCount from './ItemCount' 
 import './Item.css' 
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ComplexGrid() {
-  return (
-    <Paper
-      sx={{
-        p: 2,
-        margin: 'auto',
-        maxWidth: 500,
-        flexGrow: 1,
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-      }}
-    >
-      <Grid container spacing={2}>
-        <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src={prod_placeholder} />
-          </ButtonBase>
-        </Grid>
-        <Grid item xs={12} sm container>
-          <Grid item xs container direction="column" spacing={2}>
-            <Grid item xs>
-              <Typography gutterBottom variant="subtitle1" component="div">
-                AFA Argentina
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-                Camiseta Local Oficial 2021
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                ID: 1030114
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography variant="subtitle1" component="div">
-              $19.000,00
-            </Typography>
-          </Grid>
-        </Grid>
-        <ItemCount initial={1} items={20} />
-      </Grid>
-    </Paper>
+export default function Item(props) {
+
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return ( 
+    <>
+      <Card>
+
+      <CardMedia
+        component="img"
+        alt={props.detail.title}
+        height="200"
+        image={props.detail.image}
+      />
+
+      <CardContent>
+        <Typography gutterBottom variant="h6" component="div">
+          {props.detail.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {props.detail.description}
+        </Typography>
+        <Typography variant="body1" color="text.primary" component="div">
+          ${props.detail.price}
+        </Typography>
+      </CardContent>
+
+      <CardActions>
+          <div>
+            <Button variant="outlined" onClick={handleClickOpen}>
+            Agregar al carrito
+            </Button>
+            <Dialog
+            fullScreen
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Transition}
+            >
+            <AppBar sx={{ position: 'relative' }}>
+              <Toolbar>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={handleClose}
+                  aria-label="close"
+                >
+                  <CloseIcon />
+                </IconButton>
+                <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                  {props.detail.title}
+                </Typography>
+                <Button autoFocus color="inherit" onClick={handleClose}>
+                  Cerrar
+                </Button>
+              </Toolbar>
+            </AppBar>
+            
+            <ItemCount initial={1} items={props.detail.stock} />
+
+            </Dialog>
+          </div>
+      </CardActions>
+    </Card>
+    </>
   );
 }

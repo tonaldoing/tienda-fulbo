@@ -6,8 +6,6 @@ function App() {
     <>
       <NavBar/>
       <ItemListContainer title = {'Camisetas'}/>
-      <ItemListContainer title = {'Ropa de Fulbo'}/>
-      <ItemListContainer title = {'Accesorios'}/>
     </>
   );
 }

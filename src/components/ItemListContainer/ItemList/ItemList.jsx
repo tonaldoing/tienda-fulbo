@@ -1,7 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item'
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import {Box, Grid} from '@mui/material';
 
 function ItemList (props){
     return(

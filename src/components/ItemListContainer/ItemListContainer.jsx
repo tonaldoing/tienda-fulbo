@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ItemList from './ItemList/ItemList';
+import ItemDetailContainer from './Item/ItemDetail/ItemDetailContainer';
 import data from '../../utils/data'
 
 import { useState, useEffect } from 'react';
@@ -37,6 +38,7 @@ export default function NestedGrid(props) {
       <h2>{props.title}</h2>
       <ItemList products={products}/>
     </section>
+      <ItemDetailContainer/>
     </>
   );
 }

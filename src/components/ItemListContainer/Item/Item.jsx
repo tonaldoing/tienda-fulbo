@@ -1,17 +1,18 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Dialog from '@mui/material/Dialog';
 
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+  Dialog,
+  AppBar, 
+  Toolbar, 
+  IconButton, 
+  Slide} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
 
 import ItemCount from './ItemCount' 
 import './Item.css' 

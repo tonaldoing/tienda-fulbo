@@ -3,8 +3,9 @@ const data = [
         title : 'Camiseta Titular Argentina 22 Messi',
         price : 17900,
         image : 'https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/2c9a5c4a4eac470b8ecfaeca012c625d_9366/camiseta-titular-argentina-22-messi.jpg',
-        description: 'Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado',
-        stock: 3,
+        short_description: 'Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado',
+        description: '100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY. Los detalles en la parte interior trasera del cuello están inspirados en la bandera nacional que los jugadores representan con tanto orgullo.',
+        stock: 100,
         id: 1
     },
     {

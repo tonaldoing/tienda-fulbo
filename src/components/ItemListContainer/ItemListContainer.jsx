@@ -1,12 +1,15 @@
 import * as React from 'react';
 import ItemList from './ItemList/ItemList';
-import ItemDetailContainer from './Item/ItemDetail/ItemDetailContainer';
 import data from '../../utils/data'
+
+import { useParams } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
-export default function NestedGrid(props) {
+export default function ItemListContainer(props) {
 
+  const {name} = useParams();
+  
   const [products, setProducts] = useState([]);
 
   useEffect(
@@ -23,22 +26,24 @@ export default function NestedGrid(props) {
       promise
       .then(
         (res) => {
-          setProducts(data);
+          if(name){
+            setProducts(data.filter((product) => product.category === name ));
+          } else {
+            setProducts(data);
+          }          
         }
       ).catch(
         (errorMsg) => console.error(errorMsg)
       )
 
-    },[]
+    },[name]
   )
 
   return (
     <>
     <section className="ItemList-container" >
-      <h2>{props.title}</h2>
       <ItemList products={products}/>
     </section>
-      <ItemDetailContainer/>
     </>
   );
 }

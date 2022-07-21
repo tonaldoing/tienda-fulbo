@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 
 import {
   Card,
@@ -58,8 +59,14 @@ export default function Item(props) {
       <CardActions>
           <div>
             <Button variant="outlined" onClick={handleClickOpen}>
-            Agregar al carrito
+            Add to cart
             </Button>
+            <Link to= {'/item/' + props.detail.id}> 
+            <Button variant="outlined">
+            Details
+            </Button>
+            </Link>
+           
             <Dialog
             fullScreen
             open={open}

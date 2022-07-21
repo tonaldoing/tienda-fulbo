@@ -1,13 +1,22 @@
 import NavBar from './components/NavBar/NavBar';
-/*import ItemListContainer from './components/ItemListContainer/ItemListContainer';*/
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemListContainer/Item/ItemDetail/ItemDetailContainer';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
     <>
+    <BrowserRouter>
       <NavBar/>
-      {/*<ItemListContainer title = {'Camisetas'}/>*/}
-      <ItemDetailContainer/>
+      <Routes>
+        <Route path="/" element={<ItemListContainer title = {'Tienda'}/>} />
+        <Route path="/category/:name" element={<ItemListContainer/>} />
+        <Route path="/item/:id" element={<ItemDetailContainer/>} />
+
+        <Route path="*" element={<ErrorPage/>} />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

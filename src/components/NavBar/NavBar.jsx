@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 import {IconButton, Toolbar, Box, AppBar, Typography, Button, Divider } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,12 +21,30 @@ export default function ButtonAppBar() {
           </IconButton>
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Vivimos Fútbol
+            <Link to={"/"} 
+            className="logo">
+                Vivimos Fútbol
+            </Link>
           </Typography>
-          
-          <Button color="inherit">Camisetas</Button>
-          <Button color="inherit">Ropa de fulbo</Button>
-          <Button color="inherit">Accesorios</Button>
+
+          <Button color="inherit">
+            <Link to={"/category/camisetas"} >
+                Camisetas
+            </Link>
+          </Button>
+
+
+          <Button color="inherit">
+            <Link to={"/category/buzos"} >
+                Buzos
+            </Link>
+          </Button>
+
+          <Button color="inherit">
+            <Link to={"/category/pantalones"} >
+                Pantalones
+            </Link>
+          </Button>
           
           <Divider orientation="vertical" variant="middle" flexItem />
 

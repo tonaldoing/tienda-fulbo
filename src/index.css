@@ -7,8 +7,13 @@ GLOBAL STYLING
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /**************
-ItemList Component
+ItemList COMPONENT
 ***************/
 
 .ItemList-container {
@@ -21,4 +26,17 @@ ItemList Component
   margin-bottom: 1rem;
   font-family: Roboto;
   font-weight: 100;
+}
+
+.error-page-container {
+  display: flex;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-page-container p {
+  font-family: 'Roboto';
+  font-weight: 900;
+  margin-right: 50px;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { Button } from '@mui/material';
 
-export default function ItemCount({ initial, items }) {
+export default function ItemCount({ initial, items, onAdd }) {
   
   const [count, setCount] = useState(initial)
   const [stock, setStock] = useState(items)
@@ -37,7 +37,7 @@ export default function ItemCount({ initial, items }) {
           <Button onClick={addCount}>+</Button>
         </div>
         <div className="item-actions">
-        <Button onClick={addProd}>Agregar al carrito</Button>
+        <Button onClick={() => onAdd(count)}>Agregar al carrito</Button>
         <small> Stock disponible {stock} </small>
         </div>
       </div>

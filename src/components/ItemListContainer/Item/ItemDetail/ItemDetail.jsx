@@ -1,16 +1,22 @@
-import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ItemCount from '../../Item/ItemCount';
 import './ItemDetail.css';
 
 
 export default function ItemDetail({detail}) {
 
-    console.log(detail);
+    const [amount, setAmount] = useState(0);
+    const navigate = useNavigate();
+    const onAdd = (amount) => {
+        setAmount(amount);
+        navigate('/cart');
+    };
+
     return ( 
 
         detail.map(
             product_detail => 
-        
             <div className="detail-container">
                 <div className="detail-image-container">
                     <img src={product_detail.image} alt={product_detail.description}/>
@@ -20,13 +26,17 @@ export default function ItemDetail({detail}) {
                     <p>{product_detail.description}</p>
                     <div className="detail-desc-container-box">
                         <p>$ {product_detail.price}</p>
-                        <ItemCount initial={1} items={product_detail.stock} />
+                        { amount == 0 ? (
+                            <ItemCount initial={1} items={product_detail.stock} onAdd={onAdd}/> 
+                        ) : (
+                            <h1>Holis</h1>
+                        )
+                        }
                     </div>
                 </div>
-            </div>
-            
-            
+            </div>   
         )
+
     );
 
 }

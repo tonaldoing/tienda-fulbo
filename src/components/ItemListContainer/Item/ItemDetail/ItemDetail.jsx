@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemCount from '../../Item/ItemCount';
 import './ItemDetail.css';
-
+import {CartContext} from '../../../../contexts/CartContext';  
 
 export default function ItemDetail({detail}) {
+
+    const {setCartItems} = useContext(CartContext);
 
     const [amount, setAmount] = useState(0);
     const navigate = useNavigate();
     const onAdd = (amount) => {
         setAmount(amount);
+        setCartItems((prevState) => {
+            console.log(prevState);
+            return [...prevState, detail];
+        });
         navigate('/cart');
     };
 

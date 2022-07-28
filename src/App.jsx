@@ -4,21 +4,24 @@ import ItemDetailContainer from './components/ItemListContainer/Item/ItemDetail/
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Cart from './components/Cart/Cart';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import CartProvider from './contexts/CartContext'
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path="/" element={<ItemListContainer title = {'Tienda'}/>} />
-        <Route path="/category/:name" element={<ItemListContainer/>} />
-        <Route path="/item/:id" element={<ItemDetailContainer/>} />
-        <Route path="/cart" element={<Cart/>} />
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer title = {'Tienda'}/>} />
+          <Route path="/category/:name" element={<ItemListContainer/>} />
+          <Route path="/item/:id" element={<ItemDetailContainer/>} />
+          <Route path="/cart" element={<Cart/>} />
 
-        <Route path="*" element={<ErrorPage/>} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<ErrorPage/>} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
     </>
   );
 }

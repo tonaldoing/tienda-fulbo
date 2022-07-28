@@ -8,9 +8,8 @@ import {
   CardMedia,
   Button,
   Typography } from '@mui/material';
+
 import './Item.css' 
-
-
 
 export default function Item(props) {
 

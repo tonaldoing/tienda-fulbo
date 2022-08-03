@@ -15,8 +15,6 @@ const StyledBadge = styled(Badge)(() => ({
 }));
 
 export default function CustomizedBadges() {
-  const CartItems = useContext(CartContext);
-  console.log(CartItems);
   return (
     <IconButton aria-label="cart">
       <StyledBadge badgeContent={1} color="secondary">

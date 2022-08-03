@@ -9,7 +9,6 @@ export default function ItemDetail({detail}) {
     const [goToCart, setGoToCart] = useState(false);
     const {addItem} = useCartContext();
 
-
     const onAdd = (quantity) => {
         setGoToCart(true);
         addItem(detail, quantity);

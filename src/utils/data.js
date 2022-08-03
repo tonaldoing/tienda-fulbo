@@ -7,7 +7,7 @@ const data = [
         description: '100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY. Los detalles en la parte interior trasera del cuello están inspirados en la bandera nacional que los jugadores representan con tanto orgullo.',
         category: 'camisetas',
         stock: 100,
-        id: '1'
+        id: 1
     },
     {
         title : 'Camiseta Local River Plate 21/22',
@@ -16,7 +16,7 @@ const data = [
         description: 'Una camiseta absorbente con los clásicos colores del club para los hinchas más fieles',
         category: 'camisetas',
         stock: 6,
-        id: '2'
+        id: 2
     },
     {
         title : 'Camiseta Uniforme de Titular Juventus 22/23',
@@ -25,7 +25,7 @@ const data = [
         description: 'Una camiseta para hinchas que refleja el ADN del club, hecha con materiales reciclados',
         category: 'pantalones',
         stock: 20,
-        id: '3'
+        id: 3
     },
     {
         title : 'Camiseta Titular Manchester United 21/22',
@@ -34,7 +34,7 @@ const data = [
         description: 'Una camiseta para hinchas inspirada en un legendario uniforme titular de los diablos rojos',
         category: 'buzos',
         stock: 20,
-        id: '4'
+        id: 4
     },
   ]
 

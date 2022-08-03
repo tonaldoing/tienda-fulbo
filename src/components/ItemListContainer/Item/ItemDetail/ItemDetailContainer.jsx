@@ -29,7 +29,7 @@ export default function NestedGrid(props) {
         .then(
           (res) => {            
             if(id){
-              setDetail(data.filter((product) => product.id === id ));
+              setDetail(data.filter((product) => product.id == id ));
             } else {
               setDetail(data);
             }        
